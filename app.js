@@ -48,37 +48,37 @@ const SHOP = [
   {
     title: 'Paint and samples',
     items: [
-      { id: 'p-denim', paint: 'denim', name: 'Denim Drift', spec: 'Easycare Bathroom Soft Sheen, 2.5L',
-        note: 'Bathroom walls. Covers about 32.5m², plenty for 2 coats.',
+      { id: 'p-denim-v2', paint: 'denim', name: 'Denim Drift', spec: 'Easycare Bathroom Soft Sheen, 2\u00a0×\u00a02.5L',
+        note: 'Upstairs bathroom, plus the downstairs loo and hall. Each tin covers about 32.5m².',
         buy: [
-          { s: 'sfw', price: '£29.99', detail: 'Code 890CG, in stock' },
-          { s: 'sfg', price: '£29.99' },
-          { s: 'online', where: 'B&Q online', price: '£32.00' }
+          { s: 'sfw', price: '£29.99 each', detail: 'Code 890CG, in stock' },
+          { s: 'sfg', price: '£29.99 each' },
+          { s: 'online', where: 'B&Q online', price: '£32.00 each' }
         ] },
-      { id: 'p-dawn', paint: 'dawn', name: 'Tranquil Dawn', spec: 'Easycare Washable & Tough Matt, 2.5L or 5L',
-        note: 'Three bedroom walls.',
+      { id: 'p-dawn-v2', paint: 'dawn', name: 'Tranquil Dawn', spec: 'Easycare Washable & Tough Matt, 5L or 2\u00a0×\u00a02.5L',
+        note: 'Three bedroom walls, about 50m² over two coats. One 2.5L tin isn’t enough.',
         buy: [
-          { s: 'sfw', price: '£31.99', detail: '2.5L, code 930HX' },
-          { s: 'bqg', price: 'about £32.00', detail: '2.5L' }
+          { s: 'sfw', price: '£31.99 per 2.5L', detail: 'Code 930HX' },
+          { s: 'bqg', price: 'about £32.00 per 2.5L' }
         ] },
       { id: 'p-olive', paint: 'olive', name: 'Overtly Olive', spec: 'Easycare Washable & Tough / Kitchen Matt, 2.5L',
-        note: 'Bedroom accent wall behind the pine headboard.',
+        note: 'Bedroom accent wall behind the pine headboard. One tin is plenty, whichever wall it is.',
         buy: [
           { s: 'sfw', price: '£29.99', detail: 'Code 57564, in stock' },
           { s: 'online', where: 'B&Q online or Bristol', price: '£32.00' }
         ] },
-      { id: 'p-vanilla', paint: 'vanilla', name: 'Vanilla Sundae', spec: 'Easycare Washable & Tough Matt, 2.5L or 5L',
-        note: 'Living, dining and kitchen walls. Low-VOC and scrubbable.',
+      { id: 'p-vanilla-v2', paint: 'vanilla', name: 'Vanilla Sundae', spec: 'Easycare Washable & Tough Matt, 4\u00a0×\u00a02.5L (10L)',
+        note: 'Open-plan sitting room, dining area and kitchen, plus the stairwell. Pour every tin into one bucket and mix before you start, so the colour is even.',
         buy: [
-          { s: 'sfw', price: '£31.99', detail: '2.5L, code 3895T, in stock' },
+          { s: 'sfw', price: '£31.99 each', detail: '2.5L, code 3895T, in stock' },
           { s: 'bqg', detail: 'Custom-mixed' },
           { s: 'online', where: 'Dulux.co.uk', detail: 'Custom-mixed' }
         ] },
-      { id: 'p-white', paint: 'white', name: 'Pure Brilliant White Matt', spec: '2.5L to 5L',
-        note: 'All ceilings.',
-        buy: [ { s: 'sfw' }, { s: 'bqg' }, { s: 'cds' } ] },
-      { id: 'p-satin', paint: 'white', name: 'Quick Dry Satinwood', spec: '750ml to 1L',
-        note: 'Skirting boards. Low-odour and tough.',
+      { id: 'p-white-v2', paint: 'white', name: 'Pure Brilliant White Matt', spec: '10L tub',
+        note: 'Every ceiling, including the hall, loo and stairwell. The 10L tub often costs about the same as 5L.',
+        buy: [ { s: 'sfw', price: 'about £24' }, { s: 'bqg', price: 'about £27' }, { s: 'cds' } ] },
+      { id: 'p-satin-v2', paint: 'white', name: 'Quick Dry Satinwood', spec: '2\u00a0×\u00a0750ml',
+        note: 'Skirting in every room and up the stairs, with some left for door frames. Low-odour and tough.',
         buy: [ { s: 'sfw' }, { s: 'bqg' }, { s: 'cds' } ] },
       { id: 'p-testers', testers: ['denim', 'dawn', 'olive', 'vanilla'], name: 'Tester pots, 30ml', spec: 'Denim Drift, Tranquil Dawn, Overtly Olive, Vanilla Sundae',
         note: 'Try them next to the grey tiles and under the kitchen bulbs first.',
@@ -147,14 +147,14 @@ const SHOP = [
 ];
 
 const STEPS = [
-  { title: 'Bathroom', paints: ['denim'],
+  { title: 'Upstairs bathroom', paints: ['denim'],
     body: 'Keep the door closed and run the extractor fan.',
     wait: 'Wait 24 hours before showering so the moisture barrier cures.' },
   { title: 'Bedroom', paints: ['dawn', 'olive'],
     body: 'Keep your rabbit safely in the living area while you paint.',
     wait: 'Ventilate the bedroom for 4 to 6 hours.' },
-  { title: 'Living, dining and kitchen', paints: ['vanilla'],
-    body: 'Move your rabbit into the freshly aired bedroom while you paint.',
+  { title: 'Downstairs, hall, loo and stairs', paints: ['vanilla', 'denim'],
+    body: 'Move your rabbit into the freshly aired bedroom while you paint the open-plan area, hall, loo and stairwell. Keep the bedroom door shut while you do the stairs, because paint smell drifts upstairs.',
     wait: 'Keep the windows open for 4 to 6 hours, until it’s touch-dry and odour-free, before bringing them back.' },
   { title: 'Kitchen cabinets and magnetic fridge', paints: ['sage'],
     body: 'Ferrous sheet and d-c-fix vinyl give off no paint fumes, so your rabbit can stay in the room while you work.',
@@ -245,7 +245,61 @@ function renderRooms() {
       <span><strong>${PAINT[k].name}</strong><br><span class="muted">${role}</span></span></li>`;
 
   $('#view-rooms').innerHTML = `
-    <h2 class="sr-only">Rooms</h2>
+    <h2>Downstairs</h2>
+
+    <article class="room">
+      <div class="scene living" role="img" aria-label="Sitting room, dining area and kitchen: Vanilla Sundae walls, sage green cabinets and fridge">
+        <span class="ceiling"></span><span class="fridge"></span><span class="units"></span><span class="worktop"></span>
+      </div>
+      <h3>Sitting room, dining area and kitchen</h3>
+      <p class="muted">One L-shaped open-plan space. Two windows in the sitting room; the kitchen is windowless.</p>
+      <ul class="paints">${chip('vanilla', 'Walls')}${chip('sage', 'Cabinets, fridge and dishwasher')}</ul>
+      <dl>
+        <dt>Finish</dt><dd>Easycare Washable & Tough Matt on the walls. Self-adhesive matte vinyl wrap on the flat doors, fridge and dishwasher.</dd>
+      </dl>
+    </article>
+
+    <article class="room">
+      <div class="scene hall" role="img" aria-label="Hall and downstairs loo: Denim Drift walls, white door and ceiling">
+        <span class="ceiling"></span><span class="door"><i></i><i></i></span><span class="mirror"></span><span class="basin"></span>
+      </div>
+      <h3>Hall and downstairs loo</h3>
+      <p class="muted">Matches the upstairs bathroom</p>
+      <ul class="paints">${chip('denim', 'Walls')}</ul>
+      <dl>
+        <dt>Finish</dt><dd>Easycare Bathroom Soft Sheen, the same as the bathroom, so the loo copes with moisture and the hall finish matches it.</dd>
+        <dt>Pair with</dt><dd>White ceiling and door frames.</dd>
+      </dl>
+    </article>
+
+    <article class="room">
+      <div class="scene stairs" role="img" aria-label="Stairwell: Vanilla Sundae walls with white skirting running up the stairs">
+        <span class="ceiling"></span><span class="flight"></span><span class="string"></span>
+      </div>
+      <h3>Stairs and landing</h3>
+      <p class="muted">The stairs open straight off the dining area</p>
+      <ul class="paints">${chip('vanilla', 'Stairwell walls, carried up to a corner or door frame on the landing')}</ul>
+      <dl>
+        <dt>Finish</dt><dd>Easycare Washable & Tough Matt. Scrubbable, for hands and scuffs.</dd>
+      </dl>
+    </article>
+
+    <h2>Upstairs</h2>
+
+    <article class="room">
+      <div class="scene bedroom" role="img" aria-label="Bedroom: Tranquil Dawn walls, Overtly Olive headboard wall, olive curtains, pine bed">
+        <span class="ceiling"></span>
+        <span class="window w1"><i></i><i></i></span><span class="window w2"><i></i><i></i></span>
+        <span class="accent"></span><span class="bed"></span>
+      </div>
+      <h3>Bedroom</h3>
+      <p class="muted">4.80m × 2.80m, two windows and a plain pine bed</p>
+      <ul class="paints">${chip('dawn', 'Three walls')}${chip('olive', 'Headboard wall')}</ul>
+      <dl>
+        <dt>Finish</dt><dd>Easycare Washable & Tough Matt.</dd>
+        <dt>Pair with</dt><dd>Olive or moss green curtains and a white ceiling.</dd>
+      </dl>
+    </article>
 
     <article class="room">
       <div class="scene bathroom" role="img" aria-label="Bathroom: Denim Drift walls, white ceiling, grey tiles, wood shelf">
@@ -260,39 +314,12 @@ function renderRooms() {
       </dl>
     </article>
 
-    <article class="room">
-      <div class="scene bedroom" role="img" aria-label="Bedroom: Tranquil Dawn walls, Overtly Olive headboard wall, olive curtains, pine bed">
-        <span class="ceiling"></span>
-        <span class="window w1"><i></i><i></i></span><span class="window w2"><i></i><i></i></span>
-        <span class="accent"></span><span class="bed"></span>
-      </div>
-      <h3>Bedroom</h3>
-      <p class="muted">Two windows and a plain pine bed</p>
-      <ul class="paints">${chip('dawn', 'Three walls')}${chip('olive', 'Headboard wall')}</ul>
-      <dl>
-        <dt>Finish</dt><dd>Easycare Washable & Tough Matt.</dd>
-        <dt>Pair with</dt><dd>Olive or moss green curtains and a white ceiling.</dd>
-      </dl>
-    </article>
-
-    <article class="room">
-      <div class="scene living" role="img" aria-label="Living, dining and kitchen: Vanilla Sundae walls, sage green cabinets and fridge">
-        <span class="ceiling"></span><span class="fridge"></span><span class="units"></span><span class="worktop"></span>
-      </div>
-      <h3>Living, dining and kitchen</h3>
-      <p class="muted">Open plan, with a windowless kitchen</p>
-      <ul class="paints">${chip('vanilla', 'Walls')}${chip('sage', 'Cabinets, fridge and dishwasher')}</ul>
-      <dl>
-        <dt>Finish</dt><dd>Easycare Washable & Tough Matt on the walls. Self-adhesive matte vinyl wrap on the flat doors, fridge and dishwasher.</dd>
-      </dl>
-    </article>
-
     <article class="room whole">
       <h3>Throughout</h3>
       <ul class="paints">${chip('white', 'Matt on every ceiling, Quick Dry Satinwood on skirting')}</ul>
     </article>
 
-    <p class="footnote">Colours on screen are approximate. Use tester pots to check them in your own light.</p>
+    <p class="footnote">Colours on screen are approximate. Use tester pots to check them in your own light. Paint amounts assume 2.4m ceilings and two coats.</p>
   `;
 }
 

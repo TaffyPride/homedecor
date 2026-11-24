@@ -1,7 +1,7 @@
 'use strict';
 
 // Bump this when any file changes so phones pick up the new version.
-const CACHE = 'homedecor-v1';
+const CACHE = 'homedecor-v2';
 
 const ASSETS = [
   './',
