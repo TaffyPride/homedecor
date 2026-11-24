@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Home decorating</title>
+  <meta name="description" content="Room-by-room colour scheme, shopping list and rabbit-safe painting order.">
+  <meta name="theme-color" content="#EEF0EA">
+  <meta name="color-scheme" content="light">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Decorating">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="icons/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="preload" href="fonts/bitter.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="fonts/dmsans.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="top-inner">
+      <div class="top-row">
+        <h1>Home decorating</h1>
+        <button class="install" id="install" hidden>Install app</button>
+      </div>
+      <div class="progress" aria-live="polite">
+        <span id="progress-text">0 of 0 bought</span>
+        <span class="bar" aria-hidden="true"><span id="progress-fill"></span></span>
+      </div>
+    </div>
+    <p class="ios-hint" id="ios-hint" hidden>
+      To install on your iPhone, tap Share, then Add to Home Screen.
+      <button type="button" id="ios-hint-close">Got it</button>
+    </p>
+  </header>
+
+  <main>
+    <section id="view-rooms" class="view" aria-labelledby="tab-rooms"></section>
+    <section id="view-shopping" class="view" aria-labelledby="tab-shopping" hidden></section>
+    <section id="view-order" class="view" aria-labelledby="tab-order" hidden></section>
+    <section id="view-stores" class="view" aria-labelledby="tab-stores" hidden></section>
+  </main>
+
+  <nav class="tabs" aria-label="Sections">
+    <a href="#rooms" id="tab-rooms" data-view="rooms">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 9.5V20h13V9.5"/><path d="M10 20v-5h4v5"/></svg>
+      Rooms
+    </a>
+    <a href="#shopping" id="tab-shopping" data-view="shopping">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16l-1.6 11.2a2 2 0 0 1-2 1.8H7.6a2 2 0 0 1-2-1.8z"/><path d="M9 7a3 3 0 0 1 6 0"/><path d="m9 13.5 2 2 4-4"/></svg>
+      Shopping
+    </a>
+    <a href="#order" id="tab-order" data-view="order">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M4 5h1.5v3M4 11h2l-2 3h2M4 17h2l-1 1.2 1 1.3H4"/></svg>
+      Order
+    </a>
+    <a href="#stores" id="tab-stores" data-view="stores">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+      Stores
+    </a>
+  </nav>
+
+  <script src="app.js"></script>
+</body>
+</html>
